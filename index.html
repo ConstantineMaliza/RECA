@@ -123,7 +123,7 @@
     <h2 class="text-center">WHAT <span >WE DO</span> </h2>
 
     <div class="row">
-      <div class="col-lg-4 col-sm-6 portfolio-item">
+      <div class="col-lg-4 col-sm-6 portfolio-item" id="youth">
         <div class="card h-100">
           <a href="#"><img class="card-img-top" src="images/bg5.jpg" alt=""></a>
           <div class="card-body" id="card-body">
@@ -138,7 +138,7 @@
          
         </div>
       </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
+      <div class="col-lg-4 col-sm-6 portfolio-item" id="climate_action">
         <div class="card h-100">
           <a href="#"><img class="card-img-top" src="images/bg3.jpg" alt=""></a>
           <div class="card-body"id="card-body">
@@ -152,7 +152,7 @@
 
         </div>
       </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
+      <div class="col-lg-4 col-sm-6 portfolio-item" id="agriculture">
         <div class="card h-100">
           <a href="#"><img class="card-img-top" src="images/bg2.jpg" alt=""></a>
           <div class="card-body"id="card-body">
@@ -174,7 +174,7 @@
 
     <hr>
   <!-- Our Customers -->
-  <h2 class="text-center">OUR <span>CUSTOMERS</span> </h2>
+  <h2 class="text-center">Our <span>partners</span> </h2>
   <div class="row">
     <div class="col-lg-2 col-sm-4 mb-4">
       <img class="img-fluid" src="images/rema-225x160.jpg" alt="">
@@ -183,16 +183,16 @@
       <img class="img-fluid" src="images/image13_1821.jpg" alt="">
     </div>
     <div class="col-lg-2 col-sm-4 mb-4">
-      <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+      <img class="img-fluid" src="images/WATERAID.jpg" alt="">
     </div>
     <div class="col-lg-2 col-sm-4 mb-4">
-      <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+      <img class="img-fluid" src="images/wasac.png" alt="">
     </div>
     <div class="col-lg-2 col-sm-4 mb-4">
-      <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+      <img class="img-fluid" src="images/RYAF.jpg" alt="">
     </div>
     <div class="col-lg-2 col-sm-4 mb-4">
-      <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+      <img class="img-fluid" src="images/logo_for_ur.jpg" alt="">
     </div>
   </div>
   <!-- /.row -->
@@ -211,6 +211,120 @@
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+ 
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-storage.js"></script>
+  <script>
+     // Your web app's Firebase configuration
+     var firebaseConfig = {
+          apiKey: "AIzaSyA9z8-VtN-TeU3Fptd9eHEA3o1URaTezxo",
+          authDomain: "reca-rwanda-1f35d.firebaseapp.com",
+          databaseURL: "https://reca-rwanda-1f35d.firebaseio.com",
+          projectId: "reca-rwanda-1f35d",
+          storageBucket: "reca-rwanda-1f35d.appspot.com",
+          messagingSenderId: "153010824532",
+          appId: "1:153010824532:web:062629fdcbac5b74"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const auth=firebase.auth();
+      const database=firebase.database();
+      const storage = firebase.storage();
+//youth
+var limit=1;
+      database.ref('Youth').orderByChild("date").limitToLast(limit).on("value", function(snapshot){
+	var html="";
+	snapshot.forEach(function(childSnapshot){
+
+	var childUID = childSnapshot.key;
+	var childData = childSnapshot.val();
+	
+    // html+="<div class='col-lg-4 col-sm-6 portfolio-item'>";
+    html+="<div class='card h-100'>";
+    html+="<a href='#'><img src=\""+childData.photo+"\"class='card-img-top'></a>";
+    html+="<div class='card-body' id='card-body'>";
+    html+="<h4 class='card-title'><a href='#'>"+childData.Title+"</a></h4>";
+    // html+="<p class='p card-text'>"+childData.Description+"</p>";  
+   
+    html+="</div>";
+    html+="<div class='card-footer text-muted'>";
+    html+="<a href='#More' class='btn btn-primary' onclick=\"read_page('"+childUID+"')\">Read More &rarr;</a>";
+    html+="</div>";
+   
+    html+="</div>";
+    // html+="</div>";
+
+						
+  document.getElementById("youth").innerHTML=html;
+  
+});
+});
+var limit=1;
+    database.ref('Climate_action').orderByChild("date").limitToLast(limit).on("value", function(snapshot){
+	var html="";
+	snapshot.forEach(function(childSnapshot){
+
+	var childUID = childSnapshot.key;
+	var childData = childSnapshot.val();
+	
+    // html+="<div class='col-lg-4 col-sm-6 portfolio-item'>";
+    html+="<div class='card h-100'>";
+    html+="<a href='#'><img src=\""+childData.photo+"\"class='card-img-top'></a>";
+    html+="<div class='card-body' id='card-body'>";
+    html+="<h4 class='card-title'><a href='#'>"+childData.Title+"</a></h4>";
+    // html+="<p class='p card-text'>"+childData.Description+"</p>";  
+    
+    html+="</div>";
+    html+="<div class='card-footer text-muted'>";
+    html+="<a href='#More' class='btn btn-primary' onclick=\"read_page('"+childUID+"')\">Read More &rarr;</a>";
+    html+="</div>";
+    html+="</div>";
+    // html+="</div>";
+
+						
+  document.getElementById("climate_action").innerHTML=html;
+  
+});
+});
+var limit=1;
+      database.ref('Agriculture').orderByChild("date").limitToLast(limit).on("value", function(snapshot){
+	var html="";
+	snapshot.forEach(function(childSnapshot){
+
+	var childUID = childSnapshot.key;
+	var childData = childSnapshot.val();
+	
+    // html+="<div class='col-lg-4 col-sm-6 portfolio-item'>";
+    html+="<div class='card h-100'>";
+    html+="<a href='#'><img src=\""+childData.photo+"\"class='card-img-top'></a>";
+    html+="<div class='card-body' id='card-body'>";
+    html+="<h4 class='card-title'><a href='#'>"+childData.Title+"</a></h4>";
+    // html+="<p class='p card-text'>"+childData.Description+"</p>";  
+    html+="</div>";
+    html+="<div class='card-footer text-muted'>";
+    html+="<a href='#More' class='btn btn-primary' onclick=\"read_page('"+childUID+"')\">Read More &rarr;</a>";
+    html+="</div>";
+    html+="</div>";
+    // html+="</div>";
+
+						
+  document.getElementById("agriculture").innerHTML=html;
+  
+});
+});
+
+
+
+// call item page
+function read_page(childUID) {
+
+// alert("childUID: "+ childUID);
+
+window.location.href="blog-post.html?postuid="+childUID;
+}
+</script> 
 </body>
 
 </html>

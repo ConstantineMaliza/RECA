@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="description" content="Vali is a responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.">
+    <!-- Twitter meta-->
+    
+    <title>Admin</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Main CSS-->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link href="../css/modern-business.css" rel="stylesheet">
+
+    <link href="css/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Font-icon css-->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+  <script>
+    $(document).ready(function() {
+    function disableBack() { window.history.forward() }
+    
+    window.onload = disableBack();
+    window.onpageshow = function(evt) { if (evt.persisted) disableBack() }
+    });
+    </script>
+  <body class="app sidebar-mini rtl">
+    <!-- Navbar-->
+    <header class="app-header"><a class="app-header__logo" id="head" href="dashboard.html">RECA</a>
+      <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+      <!-- Navbar Right Menu-->
+      <ul class="app-nav">
+       
+        <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
+          <ul class="dropdown-menu settings-menu dropdown-menu-right">
+            <li><a class="dropdown-item" href="page-user.html"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
+            <li><a class="dropdown-item" href="page-user.html"><i class="fa fa-user fa-lg"></i> Profile</a></li>
+            <li><a class="dropdown-item" href="" id="logout"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </header>
+    <!-- Sidebar menu-->
+    <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+    <aside class="app-sidebar bg-primary">
+      <div class="app-sidebar__user"><img class="app-sidebar__user-avatar img-fluid" src="https://allianceforscience.cornell.edu/wp-content/uploads/2019/08/habimana-jean-claude-350x350-c-default.jpg"" alt="User Image" style="max-width:100%;max-height:60px; height:auto;">
+ <div>
+          <p class="app-sidebar__user-name" id="user_name">John Doe</p>
+          <p class="app-sidebar__user-designation">Admin</p>
+        </div>
+      </div>
+      <ul class="app-menu">
+        <li><a class="app-menu__item active" href="dashboard.html"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label"> Dashboard</span></a></li>
+        <li class=""><a class="app-menu__item" href="newspost.html" ><i class="app-menu__icon fab fa-pagelines"></i><span class="app-menu__label"> Post page</span></i></a>
+        <li class=""><a class="app-menu__item " href="Climate_action.html" ><i class="app-menu__icon fab fa-autoprefixer"></i><span class="app-menu__label"> Climate action</span></i></a>
+        <li class=""><a class="app-menu__item" href="Agriculture.html" ><i class="app-menu__icon fas fa-female"></i><span class="app-menu__label"> Agriculture</span></i></a>
+        <li class=""><a class="app-menu__item" href="Gender_equity.html" ><i class="app-menu__icon fab fa-y-combinator"></i><span class="app-menu__label">  Gender equity</span></i></a>
+        <li class=""><a class="app-menu__item" href="Youth.html" ><i class="app-menu__icon fab fa-envira"></i><span class="app-menu__label">  Youth</span></i></a>
+        <li class=""><a class="app-menu__item" href="Biodiversity.html" ><i class="app-menu__icon fab fa-envira"></i><span class="app-menu__label">  Biodiversity</span></i></a>
+       
+      </ul>
+    </aside>
+    <main class="app-content">
+      <div class="app-title">
+        <div>
+          <h1><i class="app-menu__icon fab fa-envira"></i> RECA</h1>
+        </div>
+        <ul class="app-breadcrumb breadcrumb">
+          <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+          <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-lg-3">
+          <div class="widget-small primary coloured-icon"><i class="icon fa fa-users fa-3x"></i>
+            <div class="info">
+              <h4>Users</h4>
+              <p><b>5</b></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="widget-small info coloured-icon"><i class="icon fa fa-thumbs-o-up fa-3x"></i>
+            <div class="info">
+              <h4>Likes</h4>
+              <p><b>25</b></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="widget-small warning coloured-icon"><i class="icon fa fa-files-o fa-3x"></i>
+            <div class="info">
+              <h4>Uploades</h4>
+              <p><b>10</b></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="widget-small danger coloured-icon"><i class="icon fa fa-star fa-3x"></i>
+            <div class="info">
+              <h4>Stars</h4>
+              <p><b>500</b></p>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+    </main>
+    <!-- Essential javascripts for application to work-->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <!-- The javascript plugin to display page loading on top-->
+    <script src="js/plugins/pace.min.js"></script>
+    <!-- Page specific javascripts-->
+    <script type="text/javascript" src="js/plugins/chart.js"></script>
+     <!-- The core Firebase JS SDK is always required and must be listed first -->
+      <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-storage.js"></script>
+     
+  
+      <!-- TODO: Add SDKs for Firebase products that you want to use
+          https://firebase.google.com/docs/web/setup#config-web-app -->
+  
+      <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+          apiKey: "AIzaSyA9z8-VtN-TeU3Fptd9eHEA3o1URaTezxo",
+          authDomain: "reca-rwanda-1f35d.firebaseapp.com",
+          databaseURL: "https://reca-rwanda-1f35d.firebaseio.com",
+          projectId: "reca-rwanda-1f35d",
+          storageBucket: "reca-rwanda-1f35d.appspot.com",
+          messagingSenderId: "153010824532",
+          appId: "1:153010824532:web:062629fdcbac5b74"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const auth=firebase.auth();
+      const database=firebase.database();
+      const storage = firebase.storage();
+
+      const logout=document.querySelector("#logout");
+      logout.addEventListener('click',(e)=>{
+        e.preventDefault();
+
+        auth.signOut().then(()=>{
+         
+          window.location.href="index.html";
+        });
+    });
+    var userUID= sessionStorage.getItem("userUID");
+   
+    if(userUID == null || userUID.length == 0 || userUID == "" || userUID == " " || userUID == "null" || userUID == "undefined") {
+
+window.location.href = "index.html";
+
+}else {
+    document.getElementById("user_name").innerHTML=sessionStorage.getItem("userName");
+
+}
+
+	
+     
+      var data = {
+      	labels: ["January", "February", "March", "April", "May"],
+      	datasets: [
+      		{
+      			label: "My First dataset",
+      			fillColor: "rgba(220,220,220,0.2)",
+      			strokeColor: "rgba(220,220,220,1)",
+      			pointColor: "rgba(220,220,220,1)",
+      			pointStrokeColor: "#fff",
+      			pointHighlightFill: "#fff",
+      			pointHighlightStroke: "rgba(220,220,220,1)",
+      			data: [65, 59, 80, 81, 56]
+      		},
+      		{
+      			label: "My Second dataset",
+      			fillColor: "rgba(151,187,205,0.2)",
+      			strokeColor: "rgba(151,187,205,1)",
+      			pointColor: "rgba(151,187,205,1)",
+      			pointStrokeColor: "#fff",
+      			pointHighlightFill: "#fff",
+      			pointHighlightStroke: "rgba(151,187,205,1)",
+      			data: [28, 48, 40, 19, 86]
+      		}
+      	]
+      };
+      var pdata = [
+      	{
+      		value: 300,
+      		color: "#46BFBD",
+      		highlight: "#5AD3D1",
+      		label: "Complete"
+      	},
+      	{
+      		value: 50,
+      		color:"#F7464A",
+      		highlight: "#FF5A5E",
+      		label: "In-Progress"
+      	}
+      ]
+      
+      var ctxl = $("#lineChartDemo").get(0).getContext("2d");
+      var lineChart = new Chart(ctxl).Line(data);
+      
+      var ctxp = $("#pieChartDemo").get(0).getContext("2d");
+      var pieChart = new Chart(ctxp).Pie(pdata);
+    </script>
+ 
+    <!-- Google analytics script-->
+    <script type="text/javascript">
+      if(document.location.hostname == 'pratikborsadiya.in') {
+      	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      	ga('create', 'UA-72504830-1', 'auto');
+      	ga('send', 'pageview');
+      }
+    </script>
+    <script src="js/auth.js"></script>
+  </body>
+</html>
